@@ -12,7 +12,7 @@ Features
 
 Initial Verus daemon configuration
 ==================================
-Follow (https://medium.com/veruscoin/how-to-setup-a-verus-vrsc-staking-server-with-email-alerts-using-ubuntu-and-a-5-digitalocean-4605c6d9ed10)[this guide]
+Follow [https://medium.com/veruscoin/how-to-setup-a-verus-vrsc-staking-server-with-email-alerts-using-ubuntu-and-a-5-digitalocean-4605c6d9ed10](this guide)
 to set-up your daemon for the first time. You will need a transparent address, a zs address and the daemon running with correct parameters
 (`-mint -cheatcatcher=...`).
 
@@ -27,7 +27,7 @@ Perform the following steps as non-root user (the same user the `verusd` daemon 
 1. `cd; git clone https://github.com/kbs1/verus-staking-cli`
 2. `cd verus-staking-cli/engine`
 3. `cp config.php.EXAMPLE config.php`, edit `config.php`. Read the comments to enable or disable features.
-4. (https://getcomposer.org/download/)[install composer], run `composer.phar install`
+4. [https://getcomposer.org/download/](install composer), run `composer.phar install`
 5. configure the following CRON schedule (`crontab -e`). Substitute paths as appropriate. Don't enter entries you do not wish to perform. You can configure cron timings arbitrarily, see the Usage section.
 ```
 0 * * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet shield 2>&1 >> /home/verus/SHIELDING_LOG
