@@ -27,7 +27,7 @@ Perform the following steps as non-root user (the same user the `verusd` daemon 
 1. `cd; git clone https://github.com/kbs1/verus-staking-cli`
 2. `cd verus-staking-cli/engine`
 3. `cp config.php.EXAMPLE config.php`, edit `config.php`. Read the comments to enable or disable features.
-4. [install composer](https://getcomposer.org/download/), run `composer.phar install`
+4. [install composer](https://getcomposer.org/download/), run `php composer.phar install`
 5. configure the following CRON schedule (`crontab -e`). Substitute paths as appropriate. Don't enter entries you do not wish to perform. You can configure cron timings arbitrarily, see the Usage section.
 ```
 0 * * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet shield 2>&1 >> /home/verus/SHIELDING_LOG
