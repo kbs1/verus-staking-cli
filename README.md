@@ -21,7 +21,7 @@ Do not stake with the same wallet.dat on multiple nodes.
 Installation
 ============
 Prerequisites:
-1. install PHP 7.0+, use e.g `apt-get install php7.3-cli php7.3-zip` as `root`
+1. install PHP 7.3+, use e.g `apt-get install php7.3-cli php7.3-zip php7.3-bcmath` as `root`
 
 Perform the following steps as non-root user (the same user the `verusd` daemon runs as):
 1. `cd; git clone https://github.com/kbs1/verus-staking-cli`
