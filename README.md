@@ -32,7 +32,7 @@ Perform the following steps as non-root user (the same user the `verusd` daemon 
 ```
 0 * * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet shield 2>&1 >> /home/verus/SHIELDING_LOG
 45 3 * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet balanceEmail 2>&1 >> /home/verus/BALANCE_EMAILS_LOG
-50 3 * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet backupEmail 2>&1 >> /home/verus/BACKUP_EMAILS_LOG
+50 3 25 * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet backupEmail 2>&1 >> /home/verus/BACKUP_EMAILS_LOG
 */5 * * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php emails send 2>&1 >> /home/verus/QUEUED_EMAILS_LOG
 ```
 
