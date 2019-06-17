@@ -153,7 +153,12 @@ class Verus
 
 	protected function sheduleNewlyGeneratedCoinsEmail()
 	{
-		$result = @file_put_contents($this->storage_path . '/newly_generated_coins_email.txt', time() + 60 * 30);
+		$path = $this->storage_path . '/newly_generated_coins_email.txt';
+
+		if (@file_exists($path))
+			return;
+
+		$result = @file_put_contents($path, time() + 60 * 30);
 
 		if ($result === false)
 			throw new VerusException('Unable to queue newly generated coins e-mail.');

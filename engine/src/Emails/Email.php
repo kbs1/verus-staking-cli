@@ -26,22 +26,21 @@ abstract class Email
 		if (!($this->config['emails_config']['host'] ?? false))
 			throw new VerusException('E-mails functionality is disabled, edit config.php to enable.');
 
-		// Instantiation and passing `true` enables exceptions
+		// passing true enables exceptions
 		$mail = new PHPMailer(true);
 
-		//Server settings
-		//$mail->SMTPDebug = 2;									   // Enable verbose debug output
-		$mail->isSMTP();											// Set mailer to use SMTP
-		$mail->Host	   = $this->config['emails_config']['host'];  // Specify main and backup SMTP servers
-		$mail->SMTPAuth   = true;								   // Enable SMTP authentication
-		$mail->Username   = $this->config['emails_config']['username']; // SMTP username
-		$mail->Password   = $this->config['emails_config']['password']; // SMTP password
-		$mail->SMTPSecure = $this->config['emails_config']['security']; // Enable TLS encryption, `ssl` also accepted
-		$mail->Port	   = $this->config['emails_config']['port']; // TCP port to connect to
+		//$mail->SMTPDebug = 2;
+		$mail->isSMTP();
+		$mail->Host = $this->config['emails_config']['host'];
+		$mail->SMTPAuth = true;
+		$mail->Username = $this->config['emails_config']['username'];
+		$mail->Password = $this->config['emails_config']['password'];
+		$mail->SMTPSecure = $this->config['emails_config']['security'];
+		$mail->Port = $this->config['emails_config']['port'];
 
 		//Recipients
 		$mail->setFrom($this->config['emails_config']['sender_address'], $this->config['emails_config']['sender_name']);
-		$mail->addAddress($this->config['emails_config']['recipient']);	 // Add a recipient
+		$mail->addAddress($this->config['emails_config']['recipient']);
 
 		return $mail;
 	}

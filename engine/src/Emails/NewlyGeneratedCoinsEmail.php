@@ -6,7 +6,6 @@ class NewlyGeneratedCoinsEmail extends Email
 {
 	public function send()
 	{
-		// TODO: when finding blocks more often than every 30 minutes, no e-mails will ever get sent
 		if (!$this->shouldSend())
 			return "NewlyGeneratedCoinsEmail should not be sent at this time.";
 
