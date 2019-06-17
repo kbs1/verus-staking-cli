@@ -14,7 +14,7 @@ Initial Verus daemon configuration
 ==================================
 Follow [this guide](https://medium.com/veruscoin/how-to-setup-a-verus-vrsc-staking-server-with-email-alerts-using-ubuntu-and-a-5-digitalocean-4605c6d9ed10)
 to set-up your daemon for the first time. You will need a transparent address, a zs address and the daemon running with correct parameters
-(`-mint -cheatcatcher=...`).
+(`-mint -cheatcatcher=zs...`).
 
 Do not stake with the same wallet.dat on multiple nodes.
 
