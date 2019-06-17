@@ -44,7 +44,7 @@ whenever you generate a new block, if you configure them. You may also receive p
 When you upgrade Verus, you don't have to disable the CRON schedule temporarily. Just check with `ps aux | grep php` to see if the scripts aren't currently
 running. Otherwise you risk script failures with an inconsistent state as a result, should the `verusd` daemon become unexpectedly unavailable.
 
-You may alter the crontab to run any scripts at any schedule. For example you can execute the shielding operation every minute if desired. Scripts contain
+You may alter the crontab to run the scripts at any schedule. For example you can execute the shielding operation every minute if desired. Scripts contain
 protections that won't allow critical tasks (such as shielding and unshielding) to overlap, so no harm is caused if scripts are invoked by cron arbitrarily
 fast.
 

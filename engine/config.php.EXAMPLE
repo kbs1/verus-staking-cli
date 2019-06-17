@@ -26,7 +26,7 @@ return [
 	'wallet_path' => null,
 
 	// set to non-null to create password protected wallet.dat zip archive backups,
-	// otherwise wallet.dat will be sent as a ZIP archive without a password
+	// otherwise wallet.dat will be sent as a zip archive without a password
 	'backup_zip_password' => null,
 
 	// change to VerusLocal to allow for local development without a running node (spoofed data)
