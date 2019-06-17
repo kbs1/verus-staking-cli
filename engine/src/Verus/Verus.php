@@ -66,6 +66,7 @@ class Verus
 		do {
 			$this->log("Try $try: getting balances...");
 			$try++;
+
 			$result = $this->command('z_gettotalbalance');
 			$balance = $result['private'] ?? '0.00000000';
 
@@ -83,9 +84,9 @@ class Verus
 		if (!$tries)
 			throw new VerusException("Private balance still 0 after 20 minutes, giving up.");
 
-		$balance = bcsub($balance, '0.0001', 8);
+		$balance = bcsub($balance, '0.00010000', 8);
 
-		$result = $this->command('z_sendmany ' . escapeshellarg($this->config['zs_address']) . ' ' . escapeshellarg('[{"address":"' . $this->config['t_address'] . '","amount":' . $balance . '}]') . ' 1 0.0001', false);
+		$result = $this->command('z_sendmany ' . escapeshellarg($this->config['zs_address']) . ' ' . escapeshellarg('[{"address":"' . $this->config['t_address'] . '","amount":' . $balance . '}]') . ' 1 0.00010000', false);
 		if (substr($result, 0, 5) !== 'opid-')
 			throw new VerusException("Unexpected output from 'z_sendmany', expected 'opid-*', got '$result'");
 
@@ -93,10 +94,10 @@ class Verus
 
 		$tries = 20 * 12;
 		$try = 1;
-
 		do {
 			$this->log("Try $try: getting balances...");
 			$try++;
+
 			$result = $this->command('z_gettotalbalance');
 			$balance = $result['private'] ?? '100.00000000';
 
@@ -183,7 +184,7 @@ class Verus
 			return $output;
 
 		// convert all numbers to strings to aviod floating point imprecision
-		$output = preg_replace( '/":\s*(\d+\.*\d*E*e*\d*)/', '": "\1"', $output);
+		$output = preg_replace('/":\s*(\d+\.*\d*E*e*\d*)/', '": "\1"', $output);
 
 		$json = @json_decode($output, true);
 
