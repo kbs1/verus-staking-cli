@@ -7,7 +7,7 @@ return [
 	// transparent address used to stake
 	't_address' => '...',
 
-	// private address used to shield and unshield newly minted coins
+	// private address used to shield and unshield coinbase
 	'zs_address' => '...',
 
 	// fill this key to support e-mail notifications. You can choose email notifications to be sent by editing crontab.
