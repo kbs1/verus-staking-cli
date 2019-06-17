@@ -1,0 +1,34 @@
+<?php
+
+return [
+	// where can we find the verus executable? Do not enter path to "verusd", only to "verus" or "verus-cli"
+	'verus_path' => '/home/verus/verus-cli/verus',
+
+	// transparent address used to stake
+	't_address' => '...',
+
+	// private address used to shield and unshield newly minted coins
+	'zs_address' => '...',
+
+	// fill this key to support e-mail notifications. You can choose email notifications to be sent by editing crontab.
+	'emails_config' => [
+		'host' => null, // smtp host
+		'port' => 465, // smtp port
+		'security' => 'ssl', // 'ssl', 'tls' or null
+		'username' => null, // smtp login username
+		'password' => null, // smtp password
+		'sender_address' => null, // sender e-mail address (usually the same as smtp username)
+		'sender_name' => null, // set to "Verus wallet A" for example, to easily distinguish between multiple staking wallets if necessary
+		'recipient' => null, // your e-mail address (recipient of e-mail notifications)
+	],
+
+	// if you wish to have wallet backups functionality, enter wallet.dat path here, otherwise leave null
+	'wallet_path' => null,
+
+	// set to non-null to create password protected wallet.dat zip archive backups,
+	// otherwise wallet.dat will be backed up as-is
+	'backup_zip_password' => null,
+
+	// change to VerusLocal to allow for local development without a running node (spoofed data)
+	'verus_class' => 'Verus',
+];
