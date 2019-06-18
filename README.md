@@ -1,6 +1,6 @@
 Introduction
 ============
-This tool will help you stake on your permanently running machine using Verus CLI, instead of running the Agama GUI wallet.
+These tools will help you stake on your permanently running machine using Verus CLI, instead of running the Agama GUI wallet.
 
 Features
 ========
