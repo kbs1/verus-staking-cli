@@ -28,7 +28,7 @@ Perform the following steps as non-root user (the same user the `verusd` daemon 
 2. `cd verus-staking-cli/engine`
 3. `cp config.php.EXAMPLE config.php`, edit `config.php`. Read the comments to enable or disable features.
 4. [install composer](https://getcomposer.org/download/), run `php composer.phar install`
-5. configure the following CRON schedule (`crontab -e`). Substitute paths as appropriate. Don't enter entries you do not wish to perform. You can configure cron timings arbitrarily, see the Usage section.
+5. configure the following CRON schedule (`crontab -e`). Substitute paths as appropriate. Don't enter entries you do not wish to perform. You can configure CRON timings arbitrarily, see the Usage section.
 ```
 0 * * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet shield 2>&1 >> /home/verus/SHIELDING_LOG
 45 3 * * * /usr/bin/php /home/verus/verus-staking-cli/engine/core.php wallet balanceEmail 2>&1 >> /home/verus/BALANCE_EMAILS_LOG
@@ -45,7 +45,7 @@ When you upgrade Verus, you don't have to disable the CRON schedule temporarily.
 running. Otherwise you risk script failures with an inconsistent state as a result, should the `verusd` daemon become unexpectedly unavailable.
 
 You may alter the crontab to run the scripts at any schedule. For example you can execute the shielding operation every minute if desired. Scripts contain
-protections that won't allow critical tasks (such as shielding and unshielding) to overlap, so no harm is caused if scripts are invoked by cron arbitrarily
+protections that won't allow critical tasks (such as shielding and unshielding) to overlap, so no harm is caused if scripts are invoked by CRON arbitrarily
 fast.
 
 To view operations log at any time, simply `tail ..._LOG` to view recent output of that command.
