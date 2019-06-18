@@ -40,7 +40,7 @@ class BackupEmail extends Email
 		try {
 			$this->mailer->send();
 		} catch (\Exception $ex) {
-			return "BackupEmail could not be sent. Mailer Error: {$mail->ErrorInfo}";
+			return "BackupEmail could not be sent. Mailer Error: {$this->mailer->ErrorInfo}";
 		}
 
 		return "BackupEmail successfully sent.";

@@ -12,7 +12,7 @@ class BalanceEmail extends Email
 		try {
 			$this->mailer->send();
 		} catch (\Exception $ex) {
-			return "BalanceEmail could not be sent. Mailer Error: {$mail->ErrorInfo}";
+			return "BalanceEmail could not be sent. Mailer Error: {$this->mailer->ErrorInfo}";
 		}
 
 		return "BalanceEmail successfully sent.";

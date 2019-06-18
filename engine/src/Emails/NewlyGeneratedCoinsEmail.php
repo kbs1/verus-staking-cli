@@ -15,7 +15,7 @@ class NewlyGeneratedCoinsEmail extends Email
 		try {
 			$this->mailer->send();
 		} catch (\Exception $ex) {
-			return "NewlyGeneratedCoinsEmail could not be sent. Mailer Error: {$mail->ErrorInfo}";
+			return "NewlyGeneratedCoinsEmail could not be sent. Mailer Error: {$this->mailer->ErrorInfo}";
 		}
 
 		@unlink($this->storage_path . '/newly_generated_coins_email.txt');

@@ -24,10 +24,10 @@ if (!$controller) {
 if (!isset($config['verus_path']))
 	die("Config key 'verus_path' is missing.\n");
 
-if (@!is_executable($config['verus_path']))
+if (!@is_executable($config['verus_path']))
 	die("Config key 'verus_path' is invalid - file is not executable.\n");
 
-if (isset($config['wallet_path']) && @!is_file($config['wallet_path']))
+if (isset($config['wallet_path']) && !@is_file($config['wallet_path']))
 	die("Config key 'wallet_path' is invalid - file is not a regular file.\n");
 
 if (!preg_match('/^[0-9a-zA-Z]+$/siu', $config['t_address']))
