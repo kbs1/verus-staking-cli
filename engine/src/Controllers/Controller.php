@@ -20,7 +20,7 @@ class Controller
 
 	protected function log($data)
 	{
-		$this->response(date('Y-m-d H:i:s') . ' [PID ' . getmypid() . '] ' . $data);
+		$this->response(date('Y-m-d H:i:s') . ' UTC [PID ' . getmypid() . '] ' . $data);
 	}
 
 	protected function response($data)
