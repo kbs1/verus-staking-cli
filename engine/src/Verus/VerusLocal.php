@@ -69,15 +69,15 @@ class VerusLocal extends Verus
   "total": "50.12345678"
 }');
 
-		$this->asked_times++;
+			$this->asked_times++;
 		} else if ($cmd == 'z_gettotalbalance' && $this->state == 2) {
 			$output = explode("\n", '{
   "transparent": "26.12345678",
   "interest": "0.00",
   "private": "23.9999",
-  "total": "50.12344678"
+  "total": "50.12335678"
 }');
-		$this->asked_times++;
+			$this->asked_times++;
 		}
 
 		if (!$output)
