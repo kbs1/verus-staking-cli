@@ -24,7 +24,7 @@ abstract class Email
 	protected function getMailerInstance()
 	{
 		if (!($this->config['emails_config']['host'] ?? false))
-			throw new VerusException('E-mails functionality is disabled, edit config.php to enable.');
+			throw new VerusException('E-mails functionality is disabled, edit config.php to enable it.');
 
 		// passing true enables exceptions
 		$mail = new PHPMailer(true);
