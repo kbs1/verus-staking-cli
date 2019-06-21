@@ -16,8 +16,8 @@ class BackupEmail extends Email
 		if (!@is_file($path))
 			return 'BackupEmail configuration error, wallet path is not a regular file.';
 
-		$this->mailer->Subject = 'Your wallet backup';
-		$this->mailer->Body = "Attached is your wallet backup. Your current wallet balance:\n" . json_encode($this->verus->getBalance(), JSON_PRETTY_PRINT);
+		$this->mailer->Subject = ($this->sender_name !== '' ? '[' . $this->sender_name . '] ' : '') . 'Your wallet backup';
+		$this->mailer->Body = "Attached is your wallet backup. Your current wallet balance:\n" . json_encode($this->verus->getBalance(), JSON_PRETTY_PRINT) . "\n\nTotal generated coins: " . $this->verus->retrieveTotalGenerated();
 
 		$password = (string) ($this->config['backup_zip_password'] ?? '');
 

@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 abstract class Email
 {
-	protected $verus, $config, $storage_path, $mailer;
+	protected $verus, $config, $storage_path, $mailer, $sender_name;
 
 	public function __construct(Verus $verus, array $config)
 	{
@@ -39,7 +39,13 @@ abstract class Email
 		$mail->Port = $this->config['emails_config']['port'];
 
 		//Recipients
-		$mail->setFrom($this->config['emails_config']['sender_address'], $this->config['emails_config']['sender_name']);
+		$this->sender_name = (string) ($this->config['emails_config']['sender_name'] ?? '');
+
+		if ($this->sender_name !== '')
+			$mail->setFrom($this->config['emails_config']['sender_address'], $this->sender_name);
+		else
+			$mail->setFrom($this->config['emails_config']['sender_address']);
+
 		$mail->addAddress($this->config['emails_config']['recipient']);
 
 		return $mail;

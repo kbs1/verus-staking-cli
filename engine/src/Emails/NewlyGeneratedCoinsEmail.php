@@ -9,7 +9,7 @@ class NewlyGeneratedCoinsEmail extends Email
 		if (!$this->shouldSend())
 			return "NewlyGeneratedCoinsEmail should not be sent at this time.";
 
-		$this->mailer->Subject = 'Newly generated coins!';
+		$this->mailer->Subject = ($this->sender_name !== '' ? '[' . $this->sender_name . '] ' : '') . 'Newly generated coins!';
 		$this->mailer->Body = "Newly generated coins on your wallet, congratulations!\n\nTotal generated coins: " . $this->verus->retrieveTotalGenerated() . "\n\nYour current wallet balance:\n" . json_encode($this->verus->getBalance(), JSON_PRETTY_PRINT);
 
 		try {
