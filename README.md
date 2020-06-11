@@ -2,6 +2,7 @@ DEPRECATED
 ============
 As of Verus version 0.7.0, shielding and unshielding of coinbase is no longer required.
 > After the hardfork on block 1053660, all coinbase rewards earned participate in the staking process after their minimum stake age is met.
+
 This means you can comment out the `core.php wallet shield` cron entry, balance e-mails and wallet backups can still be used.
 
 Introduction
